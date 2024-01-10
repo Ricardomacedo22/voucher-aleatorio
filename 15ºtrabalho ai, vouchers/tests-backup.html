@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>fatorial</title>
+</head>
+<body>
+    <p id="demo"></p>
+
+    <script>
+        function getRndInteger(min, max) {
+            return Math.floor(Math.random() * (max - min + 1) ) + min;
+        }
+
+        /*numeros*/
+        let text2 = ""
+        var n2;
+        for (let i = 0; i < 5; i++) {
+            n2 = getRndInteger(48, 57);
+            n2 = String.fromCharCode(n2);
+                text2 = text2 + n2;
+        }
+
+        /*letras minusculas*/
+        let text1 = ""
+        var n1;
+        for (let i = 0; i < 5; i++) {
+            n1 = getRndInteger(97, 122);
+            n1 = String.fromCharCode(n1);
+                text1 = text1 + n1;
+        }
+
+       /*letras maiusculas*/
+        let text = ""
+        var n;
+        for (let i = 0; i < 10; i++) {
+            n = getRndInteger(65 , 90);
+            n = String.fromCharCode(n);
+                text = text + n;
+        }
+
+        document.getElementById("demo").innerHTML = text + text1 + text2;
+
+        var random2 =[text, text1, text2];
+        console.log(random2)
+
+        function random2funct(random2) {
+            return Math.floor(Math.random() * 10 + 1)
+        }
+
+        let text3 = "";
+        var f;
+        for (let i = 0; i < 10; i++) {
+            f = random2funct()
+
+            text3 = text3 + f;
+            
+        }
+
+    </script>
+    
+</body>
+</html>

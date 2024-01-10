@@ -1,0 +1,136 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Voucher</title>
+        <h1>Voucher</h1>
+
+
+    <style>
+         #box{
+            border: 2px dotted black;
+            width: 700px;
+            height: 250px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: white;
+        }
+         #voucher_num{
+            border: 1px solid black;
+            width:280px;
+            height: 35px;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-size: 24px;
+            font-weight: bold;
+            position: absolute;
+            top: 58%;
+            left: 40%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+        }
+        #voucher_title{
+            font-size: 50px;
+            font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            color: red;
+            font-size: 72px;
+            background: -webkit-linear-gradient(rgba(216, 8, 8, 0.712), rgb(255, 0, 0));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            position: absolute;
+            top: 32%;
+            left: 60%;
+            transform: translate(-50%, -50%);
+        }
+        #btn{
+            position: absolute;
+            top: 20%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+        #image{
+            position: absolute;
+            top: 44%;
+            left: 36%;
+            transform: translate(-50%, -50%);
+        }
+        #quantia{
+            font-size: 75px;
+            position: absolute;
+            top: 44%;
+            left: 60%;
+            transform: translate(-50%, -50%);
+
+        }
+        body{
+            box-shadow: 0 0 5px
+                 0px 0px 20px 
+                 -10px 0 40px 
+                 -30px 0 55px 
+                 -30px 10px 55px
+                 -30px 25px 70px
+                 -30px 35px 80px
+                 -30px -10px 55px
+                 -30px -25px 70px
+                 -30px -35px 80px
+                 -30px 35px 80px
+                 0px 10px 30px
+                 0px 25px 70px
+                 0px 35px 80px
+                 0px -10px 30px
+                 0px -25px 70px
+                 30px 0 55px 
+                 30px 10px 55px
+                 30px 25px 70px
+                 30px 35px 80px
+                 30px -10px 55px
+                 30px -25px 70px
+                 30px -35px 80px
+                 30px 35px 80px 
+        }
+        
+    </style>
+</head>
+  
+<body>
+
+    <script>
+        function random(tamanho, array) {
+            var text = '';
+            for (var i = tamanho; i > 0; i--) {
+                text += array[Math.floor(Math.random() * array.length)];
+                console.log(array.length)
+            }
+            return text;
+        }
+  
+        function funct() {
+            document.getElementById('voucher_num').innerHTML = random(15, '123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMOPQRSTUVWXYZ');
+        }
+
+
+        function cor() {
+            const letters = '0123456789ABCDEF';
+            let color = '#';
+  
+            for (let i = 0; i < 6; i++) {
+               color += letters[Math.floor(Math.random() * 16)];
+            }
+            document.body.style.backgroundColor = color;
+}
+    </script>
+
+<div id="box"></div>
+<img id="image" src="./imagens/red-ribbon3-removebg-preview.png">
+<h4 id="quantia">100 &#8364;</h4>
+<h3 id="voucher_title">PRESENTE</h3>
+<button id="btn" onClick="funct(), cor()">Novo Voucher</button>
+<p id="voucher_num"></p>
+
+
+</body>
+  
+</html>
